@@ -29,27 +29,21 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
         </RelativeLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView6"
+            android:layout_height="wrap_content">
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="X"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/editText6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberSigned" />
-
+                android:layout_height="match_parent">
+                <it.beppi.knoblibrary.Knob
+                    app:kShowBalloonValues="true"
+                    android:layout_centerInParent="true"
+                    android:layout_width="500dp"
+                    android:layout_height="500dp"
+                    android:id="@+id/knob"
+                    app:kNumberOfStates="300"
+                    />
+            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -59,52 +53,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Y"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/editText7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberSigned" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Z"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/z_field"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberSigned" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SEND" />
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>

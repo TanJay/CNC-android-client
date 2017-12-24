@@ -17,19 +17,19 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
  * Created by Tanusha Jayasinghe on 12/24/2017.
  */
 
-public class MQTTHelper {
+public class MQTTHelperPublisher {
     public MqttAndroidClient mqttAndroidClient;
 
     final String serverUri = "tcp://34.213.68.150:1883";
 
-    final String clientId = "ExampleAndroidClient";
-    final String subscriptionTopic = "/cnc/state";
-//    final String subsTopic = "/cnc/z";
+    final String clientId = "sadasddsa";
+//    final String subscriptionTopic = "/cnc/state";
+    final String subsTopic = "/cnc/z";
 
 //    final String username = "xxxxxxx";
 //    final String password = "yyyyyyyyyy";
 
-    public MQTTHelper(Context context){
+    public MQTTHelperPublisher(Context context){
         mqttAndroidClient = new MqttAndroidClient(context, serverUri, clientId);
         mqttAndroidClient.setCallback(new MqttCallbackExtended() {
             @Override
@@ -95,30 +95,30 @@ public class MQTTHelper {
 
 
     private void subscribeToTopic() {
-        try {
-            mqttAndroidClient.subscribe(subscriptionTopic, 0, null, new IMqttActionListener() {
-                @Override
-                public void onSuccess(IMqttToken asyncActionToken) {
-                    Log.w("Mqtt","Subscribed!");
-                }
-
-                @Override
-                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    Log.w("Mqtt", "Subscribed fail!");
-                }
-            });
-
-        } catch (MqttException ex) {
-            System.err.println("Exception whilst subscribing");
-            ex.printStackTrace();
-        }
+//        try {
+//            mqttAndroidClient.subscribe(subscriptionTopic, 0, null, new IMqttActionListener() {
+//                @Override
+//                public void onSuccess(IMqttToken asyncActionToken) {
+//                    Log.w("Mqtt","Subscribed!");
+//                }
+//
+//                @Override
+//                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+//                    Log.w("Mqtt", "Subscribed fail!");
+//                }
+//            });
+//
+//        } catch (MqttException ex) {
+//            System.err.println("Exception whilst subscribing");
+//            ex.printStackTrace();
+//        }
     }
 
-//    public void sendMessage(String data) {
-//        try {
-//            mqttAndroidClient.publish(subscriptionTopic, data.getBytes(), 0, false);
-//        } catch (MqttException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public void sendMessage(String data) {
+        try {
+            mqttAndroidClient.publish(subsTopic, data.getBytes(), 0, false);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+    }
 }
